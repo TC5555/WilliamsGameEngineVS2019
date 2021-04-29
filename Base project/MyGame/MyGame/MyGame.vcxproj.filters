@@ -33,6 +33,7 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Ship.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
