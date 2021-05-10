@@ -1,16 +1,14 @@
 #pragma once
 #include "Engine/GameEngine.h"
-class Ship : public GameObject
+class Meteor : public GameObject
 {
 public:
-	// Creates our ship.
-	Ship();
+	// Creates our Meteor.
+	Meteor(sf::Vector2f pos);
 	// Functions overridden from GameObject:
 	void draw();
 	void update(sf::Time& elapsed);
 private:
 	sf::Sprite sprite_;
-	int fireTimer_ = 0;
-
 };
-typedef std::shared_ptr<Ship> ShipPtr;
+typedef std::shared_ptr<Meteor> MeteorPtr;
