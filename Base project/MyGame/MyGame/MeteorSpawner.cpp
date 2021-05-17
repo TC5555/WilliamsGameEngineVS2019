@@ -19,4 +19,4 @@ void MeteorSpawner::update(sf::Time& elapsed) {
 			MeteorPtr meteor = std::make_shared<Meteor>(sf::Vector2f(meteorX, meteorY));
 			GAME.getCurrentScene().addGameObject(meteor);
 		}
-}
+}
