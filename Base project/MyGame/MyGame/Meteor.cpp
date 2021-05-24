@@ -1,4 +1,5 @@
 #include "Meteor.h"
+#include "GameScene.h"
 #include "Explosion.h"
 const float SPEED = (float)(rand() % 1) + .3f;
 Meteor::Meteor(sf::Vector2f pos)
@@ -39,11 +40,13 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 		sf::FloatRect bounds = sprite_.getGlobalBounds();
 		float explosionX;
 		float explosionY;
-		ExplosionPtr laser;
+		ExplosionPtr explosion;
 		explosionX = x + bounds.width;
 		explosionY = y + (bounds.height / 2.0f);
-		laser = std::make_shared<Explosion>(sf::Vector2f(explosionX, explosionY));
-		GAME.getCurrentScene().addGameObject(laser);
+		explosion = std::make_shared<Explosion>(sf::Vector2f(explosionX, explosionY));
+		GAME.getCurrentScene().addGameObject(explosion);
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		scene.increaseScore();
 		otherGameObject.makeDead();
 	}
 	makeDead();
