@@ -18,6 +18,8 @@ void Meteor::update(sf::Time& elapsed) {
 	sf::Vector2f pos = sprite_.getPosition();
 	if (pos.x < sprite_.getGlobalBounds().width * -1)
 	{
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		scene.decreaseLives();
 		makeDead();
 	}
 	else
