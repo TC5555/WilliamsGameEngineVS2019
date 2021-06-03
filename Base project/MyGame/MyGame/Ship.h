@@ -8,6 +8,7 @@ public:
 	// Functions overridden from GameObject:
 	void draw();
 	void update(sf::Time& elapsed);
+	sf::FloatRect getCollisionRect();
 private:
 	sf::Sprite sprite_;
 	int fireTimer_ = 0;

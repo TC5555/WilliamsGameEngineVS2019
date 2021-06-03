@@ -18,8 +18,6 @@ void Meteor::update(sf::Time& elapsed) {
 	sf::Vector2f pos = sprite_.getPosition();
 	if (pos.x < sprite_.getGlobalBounds().width * -1)
 	{
-		GameScene& scene = (GameScene&)GAME.getCurrentScene();
-		scene.decreaseLives();
 		makeDead();
 	}
 	else
@@ -34,6 +32,22 @@ sf::FloatRect Meteor::getCollisionRect()
 }
 void Meteor::handleCollision(GameObject& otherGameObject)
 {
+	if (otherGameObject.hasTag("ship"))
+	{
+		sf::Vector2f pos = sprite_.getPosition();
+		float x = pos.x;
+		float y = pos.y;
+		sf::FloatRect bounds = sprite_.getGlobalBounds();
+		float explosionX;
+		float explosionY;
+		ExplosionPtr explosion;
+		explosionX = x + bounds.width;
+		explosionY = y + (bounds.height / 2.0f);
+		explosion = std::make_shared<Explosion>(sf::Vector2f(explosionX, explosionY));
+		GAME.getCurrentScene().addGameObject(explosion);
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		scene.decreaseLives();
+	}
 	if (otherGameObject.hasTag("laser"))
 	{
 		sf::Vector2f pos = sprite_.getPosition();

@@ -2,6 +2,7 @@
 #include "Ship.h"
 #include "Score.h"
 #include "MeteorSpawner.h"
+#include "GameOverScene.h"
 GameScene::GameScene()
 {
 	ShipPtr ship = std::make_shared<Ship>();
