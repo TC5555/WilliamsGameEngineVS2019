@@ -1,6 +1,7 @@
 #include "Meteor.h"
 #include "GameScene.h"
 #include "Explosion.h"
+#include "Ship.h"
 const float SPEED = (float)(rand() % 1) + .3f;
 Meteor::Meteor(sf::Vector2f pos)
 {
@@ -47,6 +48,9 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 		GAME.getCurrentScene().addGameObject(explosion);
 		GameScene& scene = (GameScene&)GAME.getCurrentScene();
 		scene.decreaseLives();
+		
+		// Update the damage level of the ship to show a more damages show on next update.
+		((Ship&)otherGameObject).updateDamageLevel(scene.getLives());
 	}
 	if (otherGameObject.hasTag("laser"))
 	{

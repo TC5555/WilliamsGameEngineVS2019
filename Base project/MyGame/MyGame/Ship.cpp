@@ -1,7 +1,7 @@
 #include "Ship.h"
-
 #include <memory>
 #include "Laser.h"
+
 
 const float SPEED = 0.3f;
 const int FIRE_DELAY = 200;
@@ -36,8 +36,27 @@ void Ship::update(sf::Time& elapsed) {
 		laserY = y + (bounds.height / 2.0f);
 		laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
 		GAME.getCurrentScene().addGameObject(laser);
-
 	}
+
+	switch (damageLevel_)
+	{
+	case 4:
+		sprite_.setTexture(GAME.getTexture("Resources/shipdamaged1.png"));
+		break;
+	case 3:
+		sprite_.setTexture(GAME.getTexture("Resources/shipdamaged2.png"));
+		break;
+	case 2:
+		sprite_.setTexture(GAME.getTexture("Resources/shipdamaged3.png"));
+		break;
+	case 1:
+		sprite_.setTexture(GAME.getTexture("Resources/shipdamaged4.png"));
+		break;
+	}
+}
+
+void Ship::updateDamageLevel(int damageLevel) {
+	damageLevel_ = damageLevel;
 }
 
 sf::FloatRect Ship::getCollisionRect()
@@ -51,6 +70,7 @@ Ship::Ship()
 	sprite_.setPosition(sf::Vector2f(100, 100));
 	assignTag("ship");
 }
+
 void Ship::draw()
 {
 	GAME.getRenderWindow().draw(sprite_);

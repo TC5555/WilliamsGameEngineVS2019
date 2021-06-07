@@ -9,9 +9,10 @@ public:
 	void draw();
 	void update(sf::Time& elapsed);
 	sf::FloatRect getCollisionRect();
+	void updateDamageLevel(int damageLevel);
 private:
 	sf::Sprite sprite_;
 	int fireTimer_ = 0;
-
+	int damageLevel_ = 0;
 };
 typedef std::shared_ptr<Ship> ShipPtr;
