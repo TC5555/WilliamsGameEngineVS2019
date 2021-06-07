@@ -13,7 +13,6 @@ class GameScene : public Scene {
   int getScore();
   // Increase the score
   void increaseScore();
-
   // Get the number of lives
   int getLives();
   // Decrease the number of lives

@@ -2,12 +2,13 @@
 #include "GameScene.h"
 #include "Explosion.h"
 #include "Ship.h"
-const float SPEED = (float)(rand() % 1) + .3f;
 Meteor::Meteor(sf::Vector2f pos)
 {
 	setCollisionCheckEnabled(true);
 	sprite_.setTexture(GAME.getTexture("Resources/meteor.png"));
 	sprite_.setPosition(pos);
+	sprite_.setRotation(rand() % 360);
+	
 	assignTag("meteor");
 }
 void Meteor::draw()
@@ -17,6 +18,15 @@ void Meteor::draw()
 void Meteor::update(sf::Time& elapsed) {
 	int msElapsed = elapsed.asMilliseconds();
 	sf::Vector2f pos = sprite_.getPosition();
+	GameScene& scene = (GameScene&)GAME.getCurrentScene();
+	float SPEED = .1 + scene.getScore() / 100.f;
+
+	if (scene.getScore() == 5)
+	{
+		sprite_.setTexture(GAME.getTexture("Resources/meteor2.png"));
+		sprite_.setScale(2, 2);
+	}
+
 	if (pos.x < sprite_.getGlobalBounds().width * -1)
 	{
 		makeDead();
