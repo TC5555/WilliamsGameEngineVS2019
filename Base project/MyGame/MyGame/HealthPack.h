@@ -1,10 +1,10 @@
 #pragma once
 #include "Engine/GameEngine.h"
-class Meteor : public GameObject
+class HealthPack : public GameObject
 {
 public:
-	// Creates our Meteor.
-	Meteor(sf::Vector2f pos);
+	// Creates our HealthPack.
+	HealthPack(sf::Vector2f pos);
 	// Functions overridden from GameObject:
 	void draw();
 	void update(sf::Time& elapsed);
@@ -13,7 +13,5 @@ public:
 
 private:
 	sf::Sprite sprite_;
-	float SPEED1;
-	bool ranrot;
 };
-typedef std::shared_ptr<Meteor> MeteorPtr;
+typedef std::shared_ptr<HealthPack> HealthPackPtr;

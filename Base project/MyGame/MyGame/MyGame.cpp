@@ -1,7 +1,7 @@
 /*
 Maintenance log:
 6/6/2021: Ship now changes sprite with damage level.
-
+6/8/2021: Meteors move at different speeds, rotate, health packs spawn in at a random time between 20 and 40 seconds. 
 
 */
 

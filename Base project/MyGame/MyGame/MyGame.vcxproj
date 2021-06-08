@@ -90,6 +90,8 @@
     <ClCompile Include="GameOverMessage.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="HealthPack.cpp" />
+    <ClCompile Include="HealthPackSpawner.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Ship.cpp" />
@@ -107,6 +109,8 @@
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Explosion.h" />
+    <ClInclude Include="HealthPack.h" />
+    <ClInclude Include="HealthPackSpawner.h" />
     <ClInclude Include="MeteorSpawner.h" />
     <ClInclude Include="Meteor.h" />
     <ClInclude Include="Laser.h" />

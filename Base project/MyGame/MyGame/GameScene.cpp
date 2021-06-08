@@ -2,6 +2,7 @@
 #include "Ship.h"
 #include "Score.h"
 #include "MeteorSpawner.h"
+#include "HealthPackSpawner.h"
 #include "GameOverScene.h"
 GameScene::GameScene()
 {
@@ -10,6 +11,9 @@ GameScene::GameScene()
 
 	MeteorSpawnerPtr meteorSpawner = std::make_shared<MeteorSpawner>();
 	addGameObject(meteorSpawner);
+
+	HealthPackSpawnerPtr healthpackspawner = std::make_shared<HealthPackSpawner>();
+	addGameObject(healthpackspawner);
 
 	ScorePtr score = std::make_shared<Score>(sf::Vector2f(10.0f, 10.0f));
 	addGameObject(score);
@@ -35,5 +39,13 @@ void GameScene::decreaseLives()
 	{
 		GameOverScenePtr gameOverScene = std::make_shared<GameOverScene>(score_);
 		GAME.setScene(gameOverScene);
+	}
+}
+
+void GameScene::increaseLives()
+{
+	if (lives_ < 5)
+	{
+		++lives_;
 	}
 }

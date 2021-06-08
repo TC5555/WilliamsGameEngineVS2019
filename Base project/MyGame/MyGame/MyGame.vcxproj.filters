@@ -23,6 +23,8 @@
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="GameOverMessage.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="HealthPack.cpp" />
+    <ClCompile Include="HealthPackSpawner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
@@ -49,6 +51,8 @@
     <ClInclude Include="Score.h" />
     <ClInclude Include="GameOverMessage.h" />
     <ClInclude Include="GameOverScene.h" />
+    <ClInclude Include="HealthPack.h" />
+    <ClInclude Include="HealthPackSpawner.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

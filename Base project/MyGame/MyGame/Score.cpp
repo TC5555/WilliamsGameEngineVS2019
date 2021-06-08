@@ -1,6 +1,7 @@
 #include "Score.h"
 #include "GameScene.h"
 #include <sstream>
+
 Score::Score(sf::Vector2f pos)
 {
 	text_.setFont(GAME.getFont("Resources/Courneuf-Regular.ttf"));

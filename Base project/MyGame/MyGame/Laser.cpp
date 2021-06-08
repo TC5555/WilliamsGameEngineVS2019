@@ -1,8 +1,6 @@
 #include "Laser.h"
 #include "GameScene.h"
 
-//updated to make the laser bigger for higher scores 
-
 
 const float SPEED = 1.2f;
 Laser::Laser(sf::Vector2f pos)

@@ -1,9 +1,6 @@
 #include "Meteor.h"
 #include "GameScene.h"
 #include "Explosion.h"
-
-//updated to: 1) make the ship sprite change when ship collides w/ meteor. 2) make laser bigger for higher scores. 
-
 //added to update ship sprite
 #include "Ship.h"
 //added to update laser
@@ -21,6 +18,11 @@ Meteor::Meteor(sf::Vector2f pos)
 	
 	SPEED1 = (float)((rand() % 10) / 100.f);
 
+	if (rand() % 100 > 50)
+	{
+		ranrot = true;
+	}
+	else ranrot = false;
 	assignTag("meteor");
 }
 void Meteor::draw()
@@ -31,12 +33,16 @@ void Meteor::update(sf::Time& elapsed) {
 	int msElapsed = elapsed.asMilliseconds();
 	sf::Vector2f pos = sprite_.getPosition();
 	GameScene& scene = (GameScene&)GAME.getCurrentScene();
-	float SPEED = .1 + scene.getScore() / 100.f + SPEED1;
+	float SPEED = .1 + scene.getScore() / 200.f + SPEED1;
 
 
 
 	float rotation = sprite_.getRotation();
-	rotation++;
+	if (ranrot == true)
+	{
+		rotation++;
+	}
+	else rotation--;
 	sprite_.setRotation(rotation);
 
 	if (pos.x < sprite_.getGlobalBounds().width * -1)
@@ -57,17 +63,7 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 {
 	if (otherGameObject.hasTag("ship"))
 	{
-		sf::Vector2f pos = sprite_.getPosition();
-		float x = pos.x;
-		float y = pos.y;
-		sf::FloatRect bounds = sprite_.getGlobalBounds();
-		float explosionX;
-		float explosionY;
-		ExplosionPtr explosion;
-		explosionX = x + (bounds.width / 2.0f);
-		explosionY = y + (bounds.height / 2.0f);
-		explosion = std::make_shared<Explosion>(sf::Vector2f(explosionX, explosionY));
-		GAME.getCurrentScene().addGameObject(explosion);
+
 		GameScene& scene = (GameScene&)GAME.getCurrentScene();
 		scene.decreaseLives();
 		
@@ -92,5 +88,6 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 		scene.increaseScore();
 		otherGameObject.makeDead();
 		makeDead();
+		
 	}
 }

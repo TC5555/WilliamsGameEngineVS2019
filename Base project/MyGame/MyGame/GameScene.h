@@ -17,6 +17,9 @@ class GameScene : public Scene {
   int getLives();
   // Decrease the number of lives
   void decreaseLives();
+  
+  void increaseLives();
+
 private:
 	int score_ = 0 ;
 	int lives_ = 5;
