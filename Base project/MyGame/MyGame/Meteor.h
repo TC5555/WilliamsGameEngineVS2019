@@ -13,5 +13,6 @@ public:
 
 private:
 	sf::Sprite sprite_;
+	float SPEED1;
 };
 typedef std::shared_ptr<Meteor> MeteorPtr;

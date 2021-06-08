@@ -2,7 +2,6 @@
 #include <memory>
 #include "Laser.h"
 
-
 const float SPEED = 0.3f;
 const int FIRE_DELAY = 200;
 

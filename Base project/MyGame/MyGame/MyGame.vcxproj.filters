@@ -63,21 +63,4 @@
       <Filter>Resources</Filter>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\Art\shipdamaged4.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="..\..\..\Art\ship.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="..\..\..\Art\shipdamaged1.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="..\..\..\Art\shipdamaged2.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="..\..\..\Art\shipdamaged3.png">
-      <Filter>Resources</Filter>
-    </Image>
-  </ItemGroup>
 </Project>
