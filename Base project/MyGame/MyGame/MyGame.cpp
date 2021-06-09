@@ -1,12 +1,13 @@
 /*
 Maintenance log:
 6/6/2021: Ship now changes sprite with damage level.
-6/8/2021: Meteors move at different speeds, rotate, health packs spawn in at a random time between 20 and 40 seconds. 
+6/8/2021: Meteors move at different speeds, rotate. Big Meteors that take 5 hits to destroy, award 5 points, and move slowly spawn at 20 points. health packs spawn in at a random time between 20 and 40 seconds when you reach 50 points. The Game now has a title/start scene
 
 */
 
 #include "Engine/GameEngine.h"
 #include "GameScene.h"
+#include "StartScene.h"
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
@@ -21,9 +22,9 @@ int main()
 	// Initialize the game.
 	GAME.initialize(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 
-	// Create our scene.
-	GameScenePtr scene = std::make_shared<GameScene>();
-	GAME.setScene(scene);
+	// Create our start screen scene.
+	StartScenePtr startscene = std::make_shared<StartScene>();
+	GAME.setScene(startscene);
 
 	// Run the game loop.
 	GAME.run();

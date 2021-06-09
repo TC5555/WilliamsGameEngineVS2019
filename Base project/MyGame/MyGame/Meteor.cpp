@@ -23,7 +23,7 @@ Meteor::Meteor(sf::Vector2f pos)
 		ranrot = true;
 	}
 	else ranrot = false;
-	assignTag("meteor");
+	assignTag("bigmeteor");
 }
 void Meteor::draw()
 {
@@ -88,6 +88,15 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 		scene.increaseScore();
 		otherGameObject.makeDead();
 		makeDead();
+
+		if (scene.getScore() == 20)
+		{
+			scene.BigMeteorUnlock();
+		}
 		
+		if (scene.getScore() == 50)
+		{
+			scene.HealthPackUnlock();
+		}
 	}
 }

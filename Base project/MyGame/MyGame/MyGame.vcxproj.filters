@@ -25,6 +25,10 @@
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="HealthPack.cpp" />
     <ClCompile Include="HealthPackSpawner.cpp" />
+    <ClCompile Include="BigMeteorSpawner.cpp" />
+    <ClCompile Include="BigMeteor.cpp" />
+    <ClCompile Include="StartScene.cpp" />
+    <ClCompile Include="StartMessage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
@@ -53,6 +57,10 @@
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="HealthPack.h" />
     <ClInclude Include="HealthPackSpawner.h" />
+    <ClInclude Include="BigMeteorSpawner.h" />
+    <ClInclude Include="BigMeteor.h" />
+    <ClInclude Include="StartScene.h" />
+    <ClInclude Include="StartMessage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

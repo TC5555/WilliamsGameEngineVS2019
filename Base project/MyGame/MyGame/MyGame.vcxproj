@@ -82,6 +82,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BigMeteor.cpp" />
+    <ClCompile Include="BigMeteorSpawner.cpp" />
     <ClCompile Include="Engine\AnimatedSprite.cpp" />
     <ClCompile Include="Engine\Game.cpp" />
     <ClCompile Include="Engine\GameObject.cpp" />
@@ -98,8 +100,12 @@
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="Meteor.cpp" />
     <ClCompile Include="MeteorSpawner.cpp" />
+    <ClCompile Include="StartMessage.cpp" />
+    <ClCompile Include="StartScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BigMeteor.h" />
+    <ClInclude Include="BigMeteorSpawner.h" />
     <ClInclude Include="Engine\AnimatedSprite.h" />
     <ClInclude Include="Engine\Game.h" />
     <ClInclude Include="Engine\GameEngine.h" />
@@ -116,6 +122,8 @@
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="Ship.h" />
+    <ClInclude Include="StartMessage.h" />
+    <ClInclude Include="StartScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\README.md" />
