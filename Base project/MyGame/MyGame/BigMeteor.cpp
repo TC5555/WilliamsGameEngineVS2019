@@ -17,8 +17,6 @@ BigMeteor::BigMeteor(sf::Vector2f pos)
 
 	sprite_.setRotation(rand() % 360);
 
-	SPEED1 = (float)((rand() % 10) / 100.f);
-
 	if (rand() % 100 > 50)
 	{
 		ranrot = true;
@@ -41,9 +39,9 @@ void BigMeteor::update(sf::Time& elapsed) {
 	float rotation = sprite_.getRotation();
 	if (ranrot == true)
 	{
-		rotation += .5;
+		rotation += speedrot;
 	}
-	else rotation -= .5;
+	else rotation -= speedrot;
 	sprite_.setRotation(rotation);
 
 	if (pos.x < sprite_.getGlobalBounds().width * -1)

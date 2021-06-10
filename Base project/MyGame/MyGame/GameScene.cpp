@@ -5,8 +5,12 @@
 #include "HealthPackSpawner.h"
 #include "GameOverScene.h"
 #include "BigMeteorSpawner.h"
+#include "ScrollingBackgroundSpawner.h"
 GameScene::GameScene()
 {
+	ScrollingBackgroundSpawnerPtr scrollingbackgroundSpawner = std::make_shared<ScrollingBackgroundSpawner>();
+	addGameObject(scrollingbackgroundSpawner);
+
 	ShipPtr ship = std::make_shared<Ship>();
 	addGameObject(ship);
 

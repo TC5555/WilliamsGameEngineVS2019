@@ -14,6 +14,7 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) y += SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) x -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) x += SPEED * msElapsed;
+	sf::FloatRect bounds = sprite_.getGlobalBounds();
 	if (x >= 716) x = 716;
 	if (y >= 480) y = 480;
 	if (x <= 0) x = 0;
@@ -39,6 +40,9 @@ void Ship::update(sf::Time& elapsed) {
 
 	switch (damageLevel_)
 	{
+	case 5:
+		sprite_.setTexture(GAME.getTexture("Resources/ship.png"));
+		break;
 	case 4:
 		sprite_.setTexture(GAME.getTexture("Resources/shipdamaged1.png"));
 		break;

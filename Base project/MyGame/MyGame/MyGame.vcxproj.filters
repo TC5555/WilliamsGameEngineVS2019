@@ -29,6 +29,8 @@
     <ClCompile Include="BigMeteor.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="StartMessage.cpp" />
+    <ClCompile Include="ScrollingBackground.cpp" />
+    <ClCompile Include="ScrollingBackgroundSpawner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
@@ -61,6 +63,8 @@
     <ClInclude Include="BigMeteor.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="StartMessage.h" />
+    <ClInclude Include="ScrollingBackground.h" />
+    <ClInclude Include="ScrollingBackgroundSpawner.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

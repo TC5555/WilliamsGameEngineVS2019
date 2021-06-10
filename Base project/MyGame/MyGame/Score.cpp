@@ -4,7 +4,7 @@
 
 Score::Score(sf::Vector2f pos)
 {
-	text_.setFont(GAME.getFont("Resources/Courneuf-Regular.ttf"));
+	text_.setFont(GAME.getFont("Resources/Orbitron-VariableFont_wght.ttf"));
 	text_.setPosition(pos);
 	text_.setCharacterSize(24);
 	text_.setFillColor(sf::Color::White);
@@ -17,6 +17,6 @@ void Score::draw()
 void Score::update(sf::Time& elapsed) {
 	GameScene& scene = (GameScene&)GAME.getCurrentScene();
 	std::stringstream stream;
-	stream << "Score: " << scene.getScore();
+	stream << "Score: " << scene.getScore() << "\tLives: " << scene.getLives();
 	text_.setString(stream.str());
 }

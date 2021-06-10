@@ -9,6 +9,7 @@ public:
 	void draw();
 	void update(sf::Time& elapsed);
 private:
+	sf::Text title_;
 	sf::Text text_;
 };
 typedef std::shared_ptr<StartMessage> StartMessagePtr;

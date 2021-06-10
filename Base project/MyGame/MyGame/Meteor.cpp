@@ -15,14 +15,13 @@ Meteor::Meteor(sf::Vector2f pos)
 	sprite_.setOrigin(bounds.width / 2.0f, bounds.height / 2.0f);
 	
 	sprite_.setRotation(rand() % 360);
-	
-	SPEED1 = (float)((rand() % 10) / 100.f);
 
 	if (rand() % 100 > 50)
 	{
 		ranrot = true;
 	}
 	else ranrot = false;
+
 	assignTag("bigmeteor");
 }
 void Meteor::draw()
@@ -33,16 +32,15 @@ void Meteor::update(sf::Time& elapsed) {
 	int msElapsed = elapsed.asMilliseconds();
 	sf::Vector2f pos = sprite_.getPosition();
 	GameScene& scene = (GameScene&)GAME.getCurrentScene();
+
 	float SPEED = .1 + scene.getScore() / 200.f + SPEED1;
-
-
 
 	float rotation = sprite_.getRotation();
 	if (ranrot == true)
 	{
-		rotation++;
+		rotation += speedrot;
 	}
-	else rotation--;
+	else rotation -= speedrot;
 	sprite_.setRotation(rotation);
 
 	if (pos.x < sprite_.getGlobalBounds().width * -1)
@@ -94,7 +92,7 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 			scene.BigMeteorUnlock();
 		}
 		
-		if (scene.getScore() == 50)
+ 		if (scene.getScore() == 50)
 		{
 			scene.HealthPackUnlock();
 		}

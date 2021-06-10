@@ -13,8 +13,9 @@ public:
 
 private:
 	sf::Sprite sprite_;
-	float SPEED1;
 	bool ranrot;
 	int health = 5;
+	float SPEED1 = (float)((rand() % 10) / 100.f);
+	float speedrot = (float)((rand() % 150) / 200.f);
 };
 typedef std::shared_ptr<BigMeteor> BigMeteorPtr;

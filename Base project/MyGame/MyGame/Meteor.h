@@ -13,7 +13,8 @@ public:
 
 private:
 	sf::Sprite sprite_;
-	float SPEED1;
+	float SPEED1 = (float)((rand() % 10) / 100.f);
 	bool ranrot;
+	float speedrot = (float)((rand() % 150) / 100.f);
 };
 typedef std::shared_ptr<Meteor> MeteorPtr;
