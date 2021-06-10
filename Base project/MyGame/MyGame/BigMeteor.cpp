@@ -107,8 +107,17 @@ void BigMeteor::handleCollision(GameObject& otherGameObject)
 			health = 5;
 			makeDead();
 
-			if (scene.getScore() >= 50)
-			{
+			switch(scene.getScore())
+			{ 
+			case 50:
+				scene.HealthPackUnlock();
+			case 51:
+				scene.HealthPackUnlock();
+			case 52:
+				scene.HealthPackUnlock();
+			case 53:
+				scene.HealthPackUnlock();
+			case 54:
 				scene.HealthPackUnlock();
 			}
 
