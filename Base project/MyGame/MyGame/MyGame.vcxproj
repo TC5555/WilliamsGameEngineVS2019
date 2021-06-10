@@ -97,7 +97,6 @@
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="ScrollingBackground.cpp" />
-    <ClCompile Include="ScrollingBackgroundSpawner.cpp" />
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="Meteor.cpp" />
@@ -124,7 +123,6 @@
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="ScrollingBackground.h" />
-    <ClInclude Include="ScrollingBackgroundSpawner.h" />
     <ClInclude Include="Ship.h" />
     <ClInclude Include="StartMessage.h" />
     <ClInclude Include="StartScene.h" />

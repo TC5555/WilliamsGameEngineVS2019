@@ -106,6 +106,12 @@ void BigMeteor::handleCollision(GameObject& otherGameObject)
 			scene.increaseScorebig();
 			health = 5;
 			makeDead();
+
+			if (scene.getScore() >= 50)
+			{
+				scene.HealthPackUnlock();
+			}
+
 		}
 		otherGameObject.makeDead();
 	}
